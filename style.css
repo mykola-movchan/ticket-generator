@@ -1,0 +1,161 @@
+:root {
+    --neutral-0: hsl(0, 0%, 100%);
+    --neutral-300: hsl(252, 6%, 83%);
+    --neutral-500: hsl(245, 15%, 58%);
+    --neutral-700: hsl(245, 19%, 35%);
+    --neutral-900: hsl(248, 70%, 10%);
+
+    --orange-500: hsl(7, 88%, 67%);
+    --orange-700: hsl(7, 71%, 60%);
+
+    --gradient-text: linear-gradient(hsl(7, 86%, 67%), hsl(0, 0%, 100%));
+
+    font-size: 20px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {  
+  background-image:
+    url('images/pattern-squiggly-line-top.svg'),
+    url('images/pattern-squiggly-line-bottom-desktop.svg'),
+    url('images/pattern-lines.svg'),
+    url('images/background-desktop.png');
+
+  background-position:
+    top right,
+    bottom left,
+    top center,
+    top left; /* image4 */
+
+  background-size:
+    auto,
+    auto,
+    100% auto,
+    cover;     /* image4 */
+
+  background-repeat:
+    no-repeat,
+    no-repeat,
+    no-repeat,
+    no-repeat;
+
+    min-height: 100dvh;
+    color: var(--neutral-0);
+
+    display: grid;
+    place-items: start center;
+}
+
+.form {
+    max-width: 800px;
+    padding-block: 2em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 2em;
+}
+
+.form h1 {
+    text-align: center;
+    font-size: 2.6rem;
+    color: var(--neutral-0);
+}
+
+.form h3 {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--neutral-300);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: 1em;
+    width: 50%;
+}
+
+form fieldset {
+    border: none;
+    width: 100%;
+
+}
+
+form fieldset > * {
+    display: block;
+    width: 100%;
+    padding-block: 15px;
+}
+
+form fieldset .note {
+    color: var(--neutral-500);
+    font-size: 0.8rem;
+}
+
+form fieldset .note::before {
+    content: url('images/icon-info.svg');
+    position: relative;
+    left: 10px;
+    left: -3px;
+    vertical-align: bottom;
+}
+
+form fieldset input[type=text] {
+    border-radius: 8px;
+    border: 1px solid var(--neutral-300);
+    background-color: hsla(245, 19%, 35%, 0.5);
+    padding-left: 1em;
+}
+
+form button {
+    width: 100%;
+    padding-block: 1em;
+    background-color: var(--orange-700);
+    color: var(--neutral-900);
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8rem;
+}
+
+.inconsolata-400 {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.inconsolata-500 {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.inconsolata-700 {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.inconsolata-800 {
+  font-family: "Inconsolata", monospace;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
