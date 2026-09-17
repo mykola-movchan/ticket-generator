@@ -49,6 +49,19 @@ body {
 
     display: grid;
     place-items: start center;
+    padding: 2em;
+
+    anchor-name: --my-anchor;
+}
+
+main {
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+}
+
+main:has(section.ticket) {
+    gap: 5em;
 }
 
 .form {
@@ -61,13 +74,22 @@ body {
     gap: 2em;
 }
 
-.form h1 {
+.form h1,
+h1 {
     text-align: center;
-    font-size: 2.6rem;
+    font-size: 3rem;
     color: var(--neutral-0);
 }
 
-.form h3 {
+h1 > span {
+    background: var(--gradient-text);
+    background-clip: text;
+    color: transparent;
+}
+
+
+
+.form h3, h3 {
     text-align: center;
     font-size: 1rem;
     color: var(--neutral-300);
@@ -102,9 +124,48 @@ form fieldset .note {
 form fieldset .note::before {
     content: url('images/icon-info.svg');
     position: relative;
-    left: 10px;
     left: -3px;
     vertical-align: bottom;
+}
+
+form input[type="text"] {
+    color: var(--neutral-0);
+    font-size: 0.8rem;
+}
+
+#drop-zone {
+    position: relative;
+    border: 1.5px dashed #4a4870;
+    border-radius: 16px;
+    background: #12112a;
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s;
+    min-height: 160px;
+}
+
+#drop-label {
+    font-size: 15px;
+    color: #8b89b0;
+    margin: 0;
+    font-family: 'Courier New', monospace;
+    letter-spacing: 0.03em;
+}
+
+#icon-wrap {
+    width: 56px; 
+    height: 56px;
+    background: #1e1d3a;
+    border-radius: 14px;
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    transition: transform 0.2s;
 }
 
 form fieldset input[type=text] {
@@ -122,6 +183,106 @@ form button {
     border: none;
     border-radius: 8px;
     font-size: 0.8rem;
+}
+
+.ticket {
+    background-image: url('images/pattern-ticket.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 244px;
+    max-width: 600px;
+    padding: 1em;
+    display: grid;
+    grid-template-columns: 4fr 2fr 1fr;
+}
+
+.ticket-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.conf {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+}
+
+.conf-details {
+    /* padding-left: 4em; */
+    position: relative;
+    display: grid;
+    gap: 1em;
+}
+
+/* .conf-details::before {
+    content: url('images/logo-mark.svg');
+    position: absolute;
+    left: 25px;
+    top: 5px;
+} */
+
+.conf-details span {
+    font-size: 0.9rem;
+    color: var(--neutral-500);
+}
+
+.attendee {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    place-items: center start;
+}
+
+.attendee img {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 16px;
+    grid-column: 1 / 2;
+    grid-row: 1 / -1;
+}
+
+.attendee strong {
+    font-size: 1.3rem;
+}
+
+#github-profile {
+    font-size: 0.9rem;
+    color: var(--neutral-300);
+}
+
+#github-profile::before {
+    content: url('images/icon-github.svg');
+    vertical-align: bottom;
+    padding-right: 8px;
+}
+
+
+#ticket-number {
+    grid-column: -2 / -1;
+    color: var(--neutral-500);
+    font-size: 1.5rem;
+    place-self: center start;
+    writing-mode: vertical-rl;
+}
+
+[popover] {
+  position-area: top center;
+  position: absolute;
+  position-anchor: --my-anchor;
+  top: 5px;
+  right: 5px;
+  max-width: 10em;
+}
+
+[popover]:popover-open {
+  padding: 2em;
+  background-color: var(--neutral-500);
+  color: var(--orange-500);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .inconsolata-400 {

@@ -22,7 +22,15 @@
       <form>
         <fieldset class="inconsolata-400">
           <label for="avatar">Upload Avatar</label>
-          <input type="file" accept="image/png, image/jpeg, image/webp" data-message="Drag and drop or click to upload">
+          <div id="drop-zone">
+            <input type="file" id="file-input" accept="image/*" multiple style="display:none;">
+
+            <div id="icon-wrap">
+              <img src="images/icon-upload.svg" alt="">
+            </div>
+
+            <p id="drop-label">Drag and drop or click to upload</p>
+          </div>
           <span class="note">Upload your photo (JPG or PNG, max size: 500KB).</span>
         </fieldset>
         
@@ -41,19 +49,13 @@
           <input type="text" name="github" id="github" placeholder="@yourusername">
         </fieldset>
 
-        <button class="inconsolata-700">Generate My Ticket</button>
+        <button class="inconsolata-700" id="submit-btn">Generate My Ticket</button>
       </form>
     </section>
-    <!-- 
-    <section class="ticket">
-      Congrats, Full Name! Your ticket is ready.
-
-  We've emailed your ticket to Email Address and will send updates in the run up to the event.
-
-  Coding Conf
-  Jan 31, 2025 / Austin, TX
-    </section>
-     -->
+     
   </main>
+  <div id="error" popover="manual"></div>
+<script src="index.js"></script>
 </body>
 </html>
+
